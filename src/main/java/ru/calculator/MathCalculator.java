@@ -1,23 +1,23 @@
 package ru.calculator;
 
-import ru.math.MathFunction;
+import static ru.math.MathFunction.*;
 
 public class MathCalculator {
 
     public static double sumAndMultiply(double first, double second) {
-        return MathFunction.sum(first, second)
-                + MathFunction.multiply(first, second);
+        return sum(first, second)
+                + multiply(first, second);
     }
 
     public static double differenceAndDivide(double first, double second) {
-        return MathFunction.difference(first, second)
-                + MathFunction.divide(first, second);
+        return difference(first, second)
+                + divide(first, second);
     }
 
     public static double all(double first, double second) {
-        return MathFunction.sum(first, second)
-                + MathFunction.multiply(first, second) + MathFunction.difference(first, second)
-                + MathFunction.divide(first, second);
+        return sum(first, second)
+                + multiply(first, second) + difference(first, second)
+                + divide(first, second);
     }
 
     public static void main(String[] args) {
