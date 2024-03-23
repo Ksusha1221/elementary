@@ -4,29 +4,17 @@ public class TwoNumberSum {
     public static int[] getIndexes(int[] array, int target) {
         int i = 0;
         int j = array.length - 1;
-        int[] massivZero = new int [0];
-        int[] massiv = new int [2];
-        int k = 0;
         while (i < j) {
-            if (array[i] + array[j] > target) {
+            int sum = array[i] + array[j];
+            if (sum > target) {
                 j--;
-            }
-            if (array[i] + array[j] < target) {
-                j = array.length - 1;
+            } else if (sum < target) {
                 i++;
-            }
-            if (array[i] + array[j] == target) {
-                massiv[0] = i;
-                massiv[1] = j;
-                k = 1;
-                break;
+            } else {
+                return new int[]{i, j};
             }
         }
-        if (k == 1) {
-            return massiv;
-        } else {
-            return massivZero;
-        }
+        return new int[0];
     }
 }
 
